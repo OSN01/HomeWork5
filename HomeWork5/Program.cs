@@ -50,7 +50,7 @@ namespace HomeWork5
                 arr[i] = arr[j];
                 arr[j] = t;
             }
-
+            //цикл вывода на консоль
             for (int i = 0; i < arr.Length; i++)
             {
                 Console.Write(arr[i] + " ");
