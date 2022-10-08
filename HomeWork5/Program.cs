@@ -14,7 +14,9 @@ namespace HomeWork5
             string slova = Console.ReadLine();
 
             //Задание 1.
-            WordsOnLine(slova);
+            string[]arr = CutTheWords(slova);
+            WordsOnLine(arr);
+            //WordsOnLine(CutTheWords(slova));
 
             //Задание 2
             ReversWords(slova);
@@ -25,13 +27,11 @@ namespace HomeWork5
         /// метод вывода каждого слова из предложения в строку
         /// </summary>
         /// <param name="value"></param>
-        static void WordsOnLine(string value)
+        static void WordsOnLine(string[] value)
         {
-            String[] words = value.Split(' ');
-
-            for (int i = 0; i < words.Length; i++)
+            for (int i = 0; i < value.Length; i++)
             {
-                Console.WriteLine(words[i]);
+                Console.WriteLine(value[i]);
             }
         }
         /// <summary>
@@ -40,8 +40,16 @@ namespace HomeWork5
         /// <param name="slova"></param>
         static void ReversWords(string value)
         {
-            String[] arr = CutTheWords(value);
-            Array.Reverse(arr);
+            string[] arr = CutTheWords(value);
+            //Array.Reverse(arr);
+            string t;
+            //цикл разворота массива в обратном порядке
+            for (int i = 0, j = arr.Length -1; i < j; i++, j--)
+            {
+                t = arr[i];
+                arr[i] = arr[j];
+                arr[j] = t;
+            }
 
             for (int i = 0; i < arr.Length; i++)
             {
